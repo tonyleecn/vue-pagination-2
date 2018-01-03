@@ -41,10 +41,14 @@ module.exports =
     format:{
       type: Boolean,
       default:true
+    },
+    Page:{
+      type: Number,
+      required: false,
+      default: 1
     }
   },
   created: function() {
-    
     if (!this.vuex) return;
     
     if (!this.for) {
@@ -67,9 +71,6 @@ module.exports =
     })
   },
   data: function() {
-    return  {
-      Page:1
-    }
   },
   computed: {
       Theme() {
