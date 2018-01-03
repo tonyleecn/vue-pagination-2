@@ -21,11 +21,11 @@ module.exports = function() {
     <ul v-show={this.totalPages>1}
     class={`${theme.list} VuePagination__pagination`}>
     
-    <li class={`VuePagination__pagination-item ${theme.item} ${theme.prev} VuePagination__pagination-item-prev-chunk ${this.allowedChunkClass(-1)}`}>
+    <li class={`VuePagination__pagination-item ${theme.item} ${theme.prev} VuePagination__pagination-item-prev-chunk ${this.allowedPageClass(this.page-1)}`}>
     <a class={theme.link} 
     href="javascript:void(0);"
-    disabled={!!this.allowedChunkClass(-1)} 
-    on-click={this.setChunk.bind(this,-1)}>&lt;&lt;</a>
+    disabled={!!this.allowedPageClass(this.page-1)} 
+    on-click={this.fistChunk.bind(this)}>首页</a>
     </li>
     
     
@@ -33,7 +33,7 @@ module.exports = function() {
     <a class={theme.link} 
     href="javascript:void(0);"
     disabled={!!this.allowedPageClass(this.page-1)} 
-    on-click={this.prev.bind(this)}>&lt;</a>
+    on-click={this.prev.bind(this)}>上一页</a>
     </li>
     
     {items}
@@ -42,18 +42,16 @@ module.exports = function() {
     <a class={theme.link} 
     href="javascript:void(0);"
     disabled={!!this.allowedPageClass(this.page+1)} 
-    on-click={this.next.bind(this)}>&gt;</a>
+    on-click={this.next.bind(this)}>下一页</a>
     </li>
     
     <li class={`VuePagination__pagination-item ${theme.item} ${theme.next} VuePagination__pagination-item-next-chunk ${this.allowedChunkClass(1)}`}>
     <a class={theme.link} 
     href="javascript:void(0);"
     disabled={!!this.allowedChunkClass(1)}
-    on-click={this.setChunk.bind(this,1)}>&gt;&gt;</a>
+    on-click={this.setChunk.bind(this,1)}> &gt;&gt; </a>
     </li>
     </ul>
-    <p v-show={parseInt(this.records)}
-    class={`VuePagination__count ${theme.count}`}>{this.count}</p>
     </nav>
     </div>
   }

@@ -119,7 +119,6 @@ module.exports =
       
     },
     count: function() {
-      
       let from = ((this.page-1) * this.perPage) + 1;
       let to = this.page==(this.totalPages)?this.records:from + this.perPage - 1;
       let parts = this.countText.split('|');
@@ -154,6 +153,9 @@ module.exports =
     },
     prev: function() {
       return this.setPage(this.page -1);
+    },
+    fistChunk: function() {
+      return this.setPage(1);
     },
     nextChunk: function() {
       return this.setChunk(1);
