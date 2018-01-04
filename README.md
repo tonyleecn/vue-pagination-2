@@ -8,6 +8,10 @@ For version 1 please use [v-pagination](https://www.npmjs.com/package/v-paginati
 Simple, generic and non-intrusive pagination component for Vue.js version 2.
 
 - [Dependencies](#dependencies)
+- build
+  - install webpack
+  - npm install
+  - npm run build
 - [Installation](#installation)
   - [NPM](#npm)
   - [Script tag](#script-tag)
