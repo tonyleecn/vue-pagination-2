@@ -9,7 +9,7 @@ Simple, generic and non-intrusive pagination component for Vue.js version 2.
 
 - [Dependencies](#dependencies)
 - build
-  - install webpack
+  - npm install webpack --save-dev
   - npm install
   - npm run build
 - [Installation](#installation)
